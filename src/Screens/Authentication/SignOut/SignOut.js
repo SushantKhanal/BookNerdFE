@@ -9,12 +9,17 @@ function SignOut() {
         alert('Logged out successfully!');
     };
 
+    const onFailure = (res) => {
+      alert('Logging out failed!');
+    }
+
     return (
       <div>
           <GoogleLogout
             clientId={CLIENT_ID}
             buttonText="Logout"
             onLogoutSuccess={onSuccess}
+            onFailure={onFailure}
           />
       </div>
     );
