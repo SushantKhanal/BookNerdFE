@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="App">
       {
-        isLoggedIn ? <SignOut changeLoggedInStateHandler={(newState) => changeLoggedInStateHandler(newState)}/> :  
-        <SignIn changeLoggedInStateHandler={(newState) => changeLoggedInStateHandler(newState)}/>
+        isLoggedIn ? <SignOut changeLoggedInStateHandler={(data, state) => changeLoggedInStateHandler(data, state)}/> :  
+        <SignIn changeLoggedInStateHandler={(data, state) => changeLoggedInStateHandler(data, state)}/>
       }
     </div>
   );
