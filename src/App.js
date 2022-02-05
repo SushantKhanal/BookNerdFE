@@ -1,23 +1,30 @@
+import { useState } from 'react';
 import './App.css';
 import SignIn from './Screens/Authentication/SignIn/SignIn';
 import SignOut from './Screens/Authentication/SignOut/SignOut';
+import * as localStorageService from './utils/localStorageService';
 
 function App() {
+  let [isLoggedIn, setLoggedIn] = useState();
+
+  const changeLoggedInStateHandler = (data, state) => {
+    updateLocalStorage(data, state);
+    setLoggedIn(state);
+  }
+
+  const updateLocalStorage = (data, state) => {
+    !state ? localStorageService.deleteItem('userData') : localStorageService.saveItem('userData', data);
+    state && localStorageService.saveItem('userData', data);
+  }
+
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <p>
-          Welcome to Book Nerd!
-        </p>
-      </header> */}
-      <SignIn/>
-      <SignOut/>
+      {
+        isLoggedIn ? <SignOut changeLoggedInStateHandler={(newState) => changeLoggedInStateHandler(newState)}/> :  
+        <SignIn changeLoggedInStateHandler={(newState) => changeLoggedInStateHandler(newState)}/>
+      }
     </div>
   );
 }
 
 export default App;
-
-
-//client id: 405139444460-gdpnh7kgm306ao7rm78askvql7243pdm.apps.googleusercontent.com
-//client secret: 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

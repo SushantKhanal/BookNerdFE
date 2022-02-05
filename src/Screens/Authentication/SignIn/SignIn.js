@@ -1,20 +1,17 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { refreshTokenSetup } from '../../../utils/refreshTokenSetup';
+import { CLIENT_ID } from '../../../constants';
 
-const CLIENT_ID = '405139444460-gdpnh7kgm306ao7rm78askvql7243pdm.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
-
-function SignIn() {
+function SignIn(props) {
     const onSuccess = (res) => {
         console.log('[Loogin Success] currentUser:', res.profileObj);
-
-        //initialising the setup
+        props.changeLoggedInStateHandler(res, true);
         refreshTokenSetup(res);
     };
 
     const onFailure = (res) => {
-        console.log('[Login Failed] res:', res);
+        alert('[Login Failed] res:', res);
     };
 
     return (
@@ -24,7 +21,7 @@ function SignIn() {
             buttonText="Login"
             onSuccess={onSuccess}
             onFailure={onFailure}
-            // cookiePolicy={'single_host_origin'}
+            cookiePolicy={'single_host_origin'}
             style={{ marginTop: '100px'}}
             isSignedIn={true}
           />
