@@ -1,28 +1,15 @@
-import { useState } from 'react';
 import './App.css';
-import SignIn from './Screens/Authentication/SignIn/SignIn';
-import SignOut from './Screens/Authentication/SignOut/SignOut';
-import * as localStorageService from './utils/localStorageService';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import AddPost from './screens/AddPost/AddPost';
 
 function App() {
-  let [isLoggedIn, setLoggedIn] = useState();
-
-  const changeLoggedInStateHandler = (data, state) => {
-    updateLocalStorage(data, state);
-    setLoggedIn(state);
-  }
-
-  const updateLocalStorage = (data, state) => {
-    !state ? localStorageService.deleteItem('userData') : localStorageService.saveItem('userData', data);
-    state && localStorageService.saveItem('userData', data);
-  }
-
   return (
     <div className="App">
-      {
-        isLoggedIn ? <SignOut changeLoggedInStateHandler={(data, state) => changeLoggedInStateHandler(data, state)}/> :  
-        <SignIn changeLoggedInStateHandler={(data, state) => changeLoggedInStateHandler(data, state)}/>
-      }
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/addPost" element={<AddPost/>} />
+      </Routes>
     </div>
   );
 }

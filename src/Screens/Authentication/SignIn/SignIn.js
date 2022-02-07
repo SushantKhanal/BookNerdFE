@@ -2,13 +2,22 @@ import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { refreshTokenSetup } from '../../../utils/refreshTokenSetup';
 import { CLIENT_ID } from '../../../constants';
+import { registerUser } from './SignInService';
+import { useNavigate } from 'react-router-dom';
 
 function SignIn(props) {
+    let navigate = useNavigate();
+
     const onSuccess = (res) => {
-        console.log('[Loogin Success] currentUser:', res.profileObj);
         props.changeLoggedInStateHandler(res, true);
+        sendIdTokenToTheServer(res.getAuthResponse().id_token);
         refreshTokenSetup(res);
     };
+
+    const sendIdTokenToTheServer = async (id_token) => {
+        await registerUser();       
+        navigate("/addPost", {replace: true});
+    }
 
     const onFailure = (res) => {
         alert('[Login Failed] res:', res);
