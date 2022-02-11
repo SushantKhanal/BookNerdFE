@@ -1,10 +1,9 @@
-import { Button, CardActionArea, CardActions, CardContent, Typography } from "@mui/material"
+import { Button, CardActions, CardContent, Typography } from "@mui/material"
 import { StyledCard, StyledCardMedia } from "./PostStyles";
 
 const Post = () => {
     return (
         <StyledCard>
-            <CardActionArea>
                 <StyledCardMedia 
                     image={require('../../../assets/preety.png')}
                     title="My Post"
@@ -23,7 +22,6 @@ const Post = () => {
                     <Button size="small" color="primary">Comment</Button>
                     <Button size="small" color="primary">Fav</Button>
                 </CardActions>
-            </CardActionArea>
         </StyledCard>
     )
 }
