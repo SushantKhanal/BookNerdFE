@@ -1,5 +1,4 @@
 import { AppBar, Toolbar, Typography } from "@mui/material"
-import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import { useState } from "react";
 import NavBarIcons from "./NavbarIcons/NavbarIcons";
