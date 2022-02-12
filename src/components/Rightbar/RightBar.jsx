@@ -1,17 +1,16 @@
 import { Avatar, ListItem, ListItemAvatar, ListItemText, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import { StyledContainer, StyledTitle, StyledLink } from "./RightBarStyles";
 import List from '@mui/material/List';
 
 const Rightbar = () => {
     return (
         <StyledContainer>
-            <StyledTitle>Suggestions for you</StyledTitle>
+            <StyledTitle>Authors for you</StyledTitle>
             <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 <ListItem alignItems="flex-start" 
                 secondaryAction={
                     <StyledLink underline="hover">
-                        Follow
+                        Subscribe
                     </StyledLink>
                 }>
                     <ListItemAvatar>
@@ -22,11 +21,10 @@ const Rightbar = () => {
                         <Typography variant="body2" sx={{fontSize: 12}}>Suggested for you</Typography>
                     }/>
                 </ListItem>
-
                 <ListItem alignItems="flex-start" 
                 secondaryAction={
                     <StyledLink underline="hover">
-                        Follow
+                        Subscribe
                     </StyledLink>
                 }>
                     <ListItemAvatar>
@@ -37,11 +35,10 @@ const Rightbar = () => {
                         <Typography variant="body2" sx={{fontSize: 12}}>Suggested for you</Typography>
                     }/>
                 </ListItem>
-
                 <ListItem alignItems="flex-start" 
                 secondaryAction={
                     <StyledLink underline="hover">
-                        Follow
+                        Subscribe
                     </StyledLink>
                 }>
                     <ListItemAvatar>
@@ -52,7 +49,6 @@ const Rightbar = () => {
                         <Typography variant="body2" sx={{fontSize: 12}}>Suggested for you</Typography>
                     }/>
                 </ListItem>
-
             </List>
         </StyledContainer>
     )
