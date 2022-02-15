@@ -1,8 +1,7 @@
-import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
-import { StyledFAB } from './AddPostFABStyles';
+import { StyledFAB } from './styles';
 import { useState } from 'react';
-import AddPostModal from '../AddPostModal/AddPostModal';
+import AddPostModal from '../AddPostModal';
 
 const AddPostFAB = () => {
     const [openModal, setOpenModal] = useState(false);

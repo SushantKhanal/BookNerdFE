@@ -1,5 +1,5 @@
 import { Button, CardActions, CardContent, Typography } from "@mui/material"
-import { StyledCard, StyledCardMedia } from "./PostStyles";
+import { StyledCard, StyledCardMedia } from "./styles";
 
 const Post = () => {
     return (

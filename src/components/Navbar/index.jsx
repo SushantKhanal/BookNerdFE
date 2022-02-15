@@ -1,8 +1,8 @@
 import { AppBar, Toolbar, Typography } from "@mui/material"
 import { styled } from '@mui/material/styles';
 import { useState } from "react";
-import NavBarIcons from "./NavbarIcons/NavbarIcons";
-import SearchField from "./SearchField/SearchField";
+import NavBarIcons from "./NavbarIcons";
+import SearchField from "./SearchField";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex', 

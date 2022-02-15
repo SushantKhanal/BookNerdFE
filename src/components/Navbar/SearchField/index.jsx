@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-import { StyledCancelIcon, StyledSearchField, StyledInputBase } from "./SearchFieldStyles";
+import { StyledCancelIcon, StyledSearchField, StyledInputBase } from "./styles";
 
 const SearchField = ({isSearchOpen, setIsSearchOpen}) => {
     return (

@@ -1,5 +1,5 @@
-import { StyledContainer } from "./FeedStyles";
-import Post from "./Post/Post";
+import { StyledContainer } from "./styles";
+import Post from "./Post";
 
 const Feed = () => {
     return (

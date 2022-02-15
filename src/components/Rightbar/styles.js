@@ -22,7 +22,7 @@ export const StyledTitle = styled(Typography)(({ theme }) => ({
 export const StyledLink = styled(Typography)(({ theme }) => ({
     fontWeight: 500,
     color: '#0095f6',
-    fontSize: 13,
+    fontSize: 14,
     marginLeft: theme.spacing(5),
     '&:hover': {
         cursor: 'pointer!important'

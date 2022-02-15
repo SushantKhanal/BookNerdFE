@@ -1,6 +1,7 @@
 import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import {StyledIconsWrapper, StyledSearchButton, StyledBadge, StyledLogOutIcon, StyledLogoutButton} from './NavbarIconsStyles';
+import SignOutButton from '../../SignOutButton';
+import {StyledIconsWrapper, StyledSearchButton, StyledBadge } from './styles';
 
 const NavBarIcons = ({isSearchOpen, setIsSearchOpen}) => {
     return (
@@ -12,8 +13,7 @@ const NavBarIcons = ({isSearchOpen, setIsSearchOpen}) => {
             <StyledBadge badgeContent={4} color="secondary">
                 <NotificationsNoneIcon/>
             </StyledBadge>
-            <StyledLogOutIcon/>
-            <StyledLogoutButton color="inherit">Logout</StyledLogoutButton>
+            <SignOutButton/>
         </StyledIconsWrapper>
     )
 }
